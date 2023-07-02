@@ -61,7 +61,7 @@ fun Overview(transactionViewModel: TransactionsViewModel = viewModel()) {
                     )
                 },
                 actions = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = { transactionViewModel.clear() }) {
                         Icon(
                             imageVector = Icons.Filled.ClearAll,
                             contentDescription = "",
