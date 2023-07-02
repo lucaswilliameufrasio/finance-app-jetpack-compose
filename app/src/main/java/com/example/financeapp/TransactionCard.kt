@@ -78,7 +78,10 @@ private fun TransactionInfo(category: String, date: String, value: BigDecimal) {
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(imageVector = Icons.Filled.Restaurant, contentDescription = "")
+            Icon(
+                imageVector = categories.firstOrNull { it.first === category }?.second
+                    ?: Icons.Filled.Lightbulb, contentDescription = ""
+            )
 
             Spacer(modifier = Modifier.width(16.dp))
 
