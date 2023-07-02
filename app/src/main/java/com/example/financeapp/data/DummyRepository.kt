@@ -1,6 +1,14 @@
 package com.example.financeapp.data
 
+import com.example.financeapp.categories
 import com.example.financeapp.domain.Transaction
+import java.math.BigDecimal
+import java.util.Random
+
+fun randomTransaction() = Transaction(
+    category = categories.shuffled().first().first,
+    value = BigDecimal.valueOf(Random().nextDouble() / Random().nextDouble())
+)
 
 object DummyRepository {
     private var _transactions = mutableListOf<Transaction>()

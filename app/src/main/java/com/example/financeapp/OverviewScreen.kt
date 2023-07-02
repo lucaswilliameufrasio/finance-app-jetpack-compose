@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.financeapp.data.randomTransaction
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
