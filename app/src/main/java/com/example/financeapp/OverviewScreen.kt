@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -48,7 +49,7 @@ fun Overview(transactionViewModel: TransactionsViewModel = viewModel()) {
     val scope = rememberCoroutineScope()
     val showScrollToTopButton by remember {
         derivedStateOf {
-            listState.firstVisibleItemIndex > 7
+            listState.firstVisibleItemIndex > 2
         }
     }
 
@@ -78,7 +79,18 @@ fun Overview(transactionViewModel: TransactionsViewModel = viewModel()) {
             FloatingActionButton(onClick = {
                 transactionViewModel.add(randomTransaction())
             }) {
-                Icon(imageVector = Icons.Filled.Add, contentDescription = "Add transaction")
+                Row(
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(imageVector = Icons.Filled.Add, contentDescription = "Add transaction")
+                    AnimatedVisibility(visible = !showScrollToTopButton) {
+                        Text(
+                            text = "Add Transaction",
+                            modifier = Modifier.padding(start = 8.dp)
+                        )
+                    }
+                }
             }
         }
     ) {
