@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.wear.compose.material.ContentAlpha
 import com.example.financeapp.domain.Transaction
 import java.math.BigDecimal
 import java.text.NumberFormat
@@ -85,7 +86,11 @@ private fun TransactionInfo(category: String, date: String, value: BigDecimal) {
                 modifier = Modifier.weight(1f)
             ) {
                 Text(text = category, style = MaterialTheme.typography.titleMedium)
-                Text(text = date, style = MaterialTheme.typography.titleSmall)
+                Text(
+                    text = date,
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium)
+                )
             }
 
             Spacer(modifier = Modifier.width(2.dp))
