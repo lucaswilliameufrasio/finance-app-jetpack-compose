@@ -56,14 +56,17 @@ private fun TransactionInfo(category: String, date: String, value: BigDecimal) {
                 Text(text = category, style = MaterialTheme.typography.titleMedium)
                 Text(
                     text = date,
-                    style = MaterialTheme.typography.titleSmall,
+                    style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium)
                 )
             }
 
             Spacer(modifier = Modifier.width(2.dp))
 
-            Text(text = value.toCurrency())
+            Text(
+                text = value.toCurrency(),
+                style = MaterialTheme.typography.bodyLarge,
+            )
 
             Spacer(modifier = Modifier.width(16.dp))
 
