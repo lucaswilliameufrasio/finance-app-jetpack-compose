@@ -84,8 +84,8 @@ private fun TransactionInfo(category: String, date: String, value: BigDecimal) {
             Column(
                 modifier = Modifier.weight(1f)
             ) {
-                Text(text = category)
-                Text(text = date)
+                Text(text = category, style = MaterialTheme.typography.titleMedium)
+                Text(text = date, style = MaterialTheme.typography.titleSmall)
             }
 
             Spacer(modifier = Modifier.width(2.dp))
